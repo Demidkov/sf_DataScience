@@ -22,8 +22,7 @@ def random_predict(number: int = 1) -> int:
 
     while True:
         count += 1
-    #   print(f'число, которое угадываем: {number}, попытка {predict_number} ')
-    #   predict_number = np.random.randint(1, 101)  # предполагаемое число
+
         if number == predict_number: break          # выход из цикла если угадали
         elif number > predict_number :              # если наше число больше, чем загаданное, то
             numb_min = predict_number               # нижняя граница отрезка становится серединой        
@@ -50,9 +49,6 @@ def score_game(random_predict) -> int:
 
     for number in random_array:
        count_ls.append(random_predict(number))
- #   number = random_array[0]
- #   print('number = ', number)
- #   count_ls.append(random_predict(number))
 
     score = int(np.mean(count_ls))
     print(f"Ваш алгоритм угадывает число в среднем за:{score} попыток")
